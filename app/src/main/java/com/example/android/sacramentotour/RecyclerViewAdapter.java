@@ -1,22 +1,16 @@
 package com.example.android.sacramentotour;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.ContentFrameLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Locale;
+
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>  {
 
@@ -32,25 +26,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     int currentPosition;
 
 
-
-    public int getMainImageView() {
-        return mainImageViewID;
-    }
-
-
-
-
-
-
     public RecyclerViewAdapter(ArrayList<SiteData> listSitesData, Context context) {
         this.listSitesData = listSitesData;
         this.context = context;
 
-
-
     }
-
-
 
     @NonNull
     @Override
@@ -58,8 +38,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_site_data,parent,false);
-
-
 
         return new ViewHolder(view);
     }
@@ -70,7 +48,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         currentSite = listSitesData.get(position);
 
-
         holder.tv_nameOftheSite.setText(currentSite.getNameOfthePlace());
         holder.tv_addresse.setText(currentSite.getAddress());
         holder.tv_phone.setText(currentSite.getPhoneNumner());
@@ -79,9 +56,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mainImageViewID = currentSite.getImageResourceID();
         currentPosition= holder.getAdapterPosition();
 
-
-
-
     }
 
     @Override
@@ -89,14 +63,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return listSitesData.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView tv_nameOftheSite;
         private TextView tv_addresse;
         private TextView tv_phone;
         private TextView tv_website;
         private ImageView img_front_pic;
-
-
 
         private ViewHolder(View itemView) {
             super(itemView);
@@ -106,16 +78,22 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             tv_phone = itemView.findViewById(R.id.phone_number);
             tv_website = itemView.findViewById(R.id.website);
             img_front_pic = itemView.findViewById(R.id.image_of_site);
-
-
+            img_front_pic.setOnClickListener(this);
         }
 
 
+        @Override
+        public void onClick(View v) {
 
+            Intent intent = new Intent(context, OneSiteFullScreen.class);
+            if(currentSite != null){
+                intent.putParcelableArrayListExtra("listOfSites", listSitesData);
+                intent.putExtra("position",getAdapterPosition() );
+                context.startActivity(intent);
+
+
+            }
+
+        }
     }
-
-
-
-
-
 }

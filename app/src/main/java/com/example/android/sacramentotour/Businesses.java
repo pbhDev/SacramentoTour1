@@ -18,7 +18,7 @@ public class Businesses extends Fragment   {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_businesses, container, false);
 
         ArrayList<SiteData> businessArray = new ArrayList<>();
@@ -46,27 +46,13 @@ public class Businesses extends Fragment   {
 
 
         ImageView imageOfThePlace = rootView.findViewById(R.id.imageView_business);
-
+        imageOfThePlace.setImageResource( R.drawable.sacramento);
 
         RecyclerView businessListView = rootView.findViewById(R.id.recyclerView_businesses);
-
-
         businessListView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
         RecyclerViewAdapter rAdapter = new RecyclerViewAdapter(businessArray,this.getContext());
-
         businessListView.setAdapter(rAdapter);
 
-        imageOfThePlace.setImageResource(businessArray.get(rAdapter.getCurrentPosition()).getImageResourceID());
-
-
-
-
-
-
-
-
-        // Inflate the layout for this fragment
         return rootView;
     }
 

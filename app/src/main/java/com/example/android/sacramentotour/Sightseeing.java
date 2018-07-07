@@ -27,19 +27,19 @@ public class Sightseeing extends Fragment {
 
         sightseeingArray =  new ArrayList<>();
 
-        sightseeingArray.add(new SiteData(1,"10th & L St, Sacramento, CA 95814",
+        sightseeingArray.add(new SiteData("10th & L St, Sacramento, CA 95814",
                 "916-324-0333","http://assembly.ca.gov/statecapitol",
-                "Capitol",R.drawable.capitol1));
-        sightseeingArray.add(new SiteData(1," 342 L St, Sacramento, CA 95814",
+                "Capitol",R.drawable.capitol));
+        sightseeingArray.add(new SiteData(" 342 L St, Sacramento, CA 95814",
                 "916-808-8795","http://www.cityofsacramento.org/",
                 "Tower Bridge",R.drawable.goldenbridge));
-        sightseeingArray.add(new SiteData(1,"3930 W Land Park Dr, Sacramento, CA 95822",
+        sightseeingArray.add(new SiteData("3930 W Land Park Dr, Sacramento, CA 95822",
                 " 916-808-5888","https://www.saczoo.org/",
                 "Sacramento Zoo",R.drawable.saczoo));
-        sightseeingArray.add(new SiteData(1, "125 I St, Sacramento, CA 95814",
+        sightseeingArray.add(new SiteData("125 I St, Sacramento, CA 95814",
                 "916-323-9280","http://www.parks.ca.gov/?page_id=668",
                 "California State Railroad Museum",R.drawable.trainmuseum));
-        sightseeingArray.add(new SiteData(1,"1014 2nd St #200, Sacramento, CA 95814",
+        sightseeingArray.add(new SiteData("1014 2nd St #200, Sacramento, CA 95814",
                 "916-970-5226", "http://oldsacramento.com/about/history",
                 "Old Sacramento", R.drawable.oldsac));
 

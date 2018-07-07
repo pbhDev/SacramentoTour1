@@ -27,22 +27,18 @@ public class LocalEvents extends Fragment {
         imageOfThePlace.setImageResource( R.drawable.goldenonecenter);
 
         localEventArray = new ArrayList<>();
-        localEventArray.add(new SiteData(3,"1600 Exposition Blvd, Sacramento, CA 95815",
+        localEventArray.add(new SiteData("1600 Exposition Blvd, Sacramento, CA 95815",
                 "916-263-3247", "http://www.castatefair.org/special-events/",
                 "California State Fair", R.drawable.statefair));
-
-        localEventArray.add(new SiteData(3,"500 David J Stern Walk, Sacramento, CA 95814",
+        localEventArray.add(new SiteData("500 David J Stern Walk, Sacramento, CA 95814",
                 "888-915-4647", "https://www.golden1center.com/events",
                 "Golden 1 Center", R.drawable.sacarena));
-
-        localEventArray.add(new SiteData(3, "1600 Exposition Blvd, Sacramento, CA 95815",
+        localEventArray.add(new SiteData("1600 Exposition Blvd, Sacramento, CA 95815",
                 "(916) 307-6100", "https://www.sacrepublicfc.com/",
                 "Sacramento Republic FC", R.drawable.sacrep ));
-
-        localEventArray.add(new SiteData(3, "1206 Front Street, Sacramento CA 95814",
+        localEventArray.add(new SiteData("1206 Front Street, Sacramento CA 95814",
                 "916-446-1185","https://www.hornblower.com/home/sac",
                 "Hornblower", R.drawable.hornblower));
-
         RecyclerView localEventListView = rootView.findViewById(R.id.recyvlerView_LocalEvent);
         localEventListView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         RecyclerViewAdapter rAdapter = new RecyclerViewAdapter(localEventArray,this.getContext());

@@ -16,14 +16,16 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
             return new Sightseeing();
         } else if (position == 1){
             return new Businesses();
-        } else {
+        } else if (position == 2){
             return new LocalEvents();
+        } else {
+            return new Hotels();
         }
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 
     @Override
@@ -35,10 +37,10 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
                 return "Places";
             case 2:
                 return "Events";
+            case 3:
+                return "Hotels";
             default:
                 return null;
-
         }
-
     }
 }

@@ -12,17 +12,15 @@ public class SiteData implements Parcelable {
     int imageResourceID;
 
 
-    int type; //1- Sightseeing, 2- Businesses, 3- LocalEvents
 
-
-    public SiteData(int type, String address, String phoneNumner, String website,
+    public SiteData(String address, String phoneNumner, String website,
                     String nameOfthePlace, int imageResourceID) {
         this.address = address;
         this.phoneNumner = phoneNumner;
         this.website = website;
         this.nameOfthePlace = nameOfthePlace;
         this.imageResourceID = imageResourceID;
-        this.type = type;
+
     }
 
     protected  SiteData(Parcel in){
@@ -32,7 +30,6 @@ public class SiteData implements Parcelable {
         phoneNumner = in.readString();
         website = in.readString();
         imageResourceID = in.readInt();
-
     }
 
     public static final Creator<SiteData> CREATOR = new Creator<SiteData>() {
@@ -54,16 +51,11 @@ public class SiteData implements Parcelable {
         dest.writeString(website);
         dest.writeString(phoneNumner);
         dest.writeInt(imageResourceID);
-
     }
 
     @Override
     public int describeContents() {
         return 0;
-    }
-
-    public int getType() {
-        return type;
     }
 
     public String getAddress() {
@@ -86,17 +78,7 @@ public class SiteData implements Parcelable {
         return imageResourceID;
     }
 
-    public void setType(int type) {
-        this.type = type;
-    }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
-    }
 
 
 }

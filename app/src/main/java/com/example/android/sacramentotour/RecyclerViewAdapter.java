@@ -19,17 +19,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     SiteData currentSite;
     int mainImageViewID;
 
-    public int getCurrentPosition() {
-        return currentPosition;
-    }
-
     int currentPosition;
-
 
     public RecyclerViewAdapter(ArrayList<SiteData> listSitesData, Context context) {
         this.listSitesData = listSitesData;
         this.context = context;
-
     }
 
     @NonNull
@@ -42,20 +36,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return new ViewHolder(view);
     }
 
-
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         currentSite = listSitesData.get(position);
 
         holder.tv_nameOftheSite.setText(currentSite.getNameOfthePlace());
-        holder.tv_addresse.setText(currentSite.getAddress());
-        holder.tv_phone.setText(currentSite.getPhoneNumner());
-        holder.tv_website.setText(currentSite.getWebsite());
         holder.img_front_pic.setImageResource(currentSite.getImageResourceID());
         mainImageViewID = currentSite.getImageResourceID();
         currentPosition= holder.getAdapterPosition();
-
     }
 
     @Override
@@ -65,35 +54,23 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView tv_nameOftheSite;
-        private TextView tv_addresse;
-        private TextView tv_phone;
-        private TextView tv_website;
         private ImageView img_front_pic;
 
         private ViewHolder(View itemView) {
             super(itemView);
-
             tv_nameOftheSite = itemView.findViewById(R.id.site_name);
-            tv_addresse = itemView.findViewById(R.id.address);
-            tv_phone = itemView.findViewById(R.id.phone_number);
-            tv_website = itemView.findViewById(R.id.website);
             img_front_pic = itemView.findViewById(R.id.image_of_site);
-            img_front_pic.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
-
 
         @Override
         public void onClick(View v) {
-
             Intent intent = new Intent(context, OneSiteFullScreen.class);
             if(currentSite != null){
                 intent.putParcelableArrayListExtra("listOfSites", listSitesData);
                 intent.putExtra("position",getAdapterPosition() );
                 context.startActivity(intent);
-
-
             }
-
         }
     }
 }

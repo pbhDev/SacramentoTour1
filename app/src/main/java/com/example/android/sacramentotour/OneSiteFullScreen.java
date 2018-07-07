@@ -21,7 +21,6 @@ public class OneSiteFullScreen extends AppCompatActivity {
     TextView tvPhoneNumner;
     TextView tvWebsite;
     ImageView imImageResourceID;
-
     ActionBar actionBar;
 
     @Override

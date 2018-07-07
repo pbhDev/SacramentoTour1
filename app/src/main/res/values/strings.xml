@@ -6,4 +6,8 @@
     <string name="image_of_a_business">Image of a business</string>
     <string name="image_of_local_business">Image of local Business</string>
     <string name="image_of_a_site">Image of a site</string>
+    <string name="image_of_a_hotel">image of a hotel</string>
+    <string name="capitol">Capitol</string>
+    <string name="address">address</string>
+    <string name="website">website</string>
 </resources>

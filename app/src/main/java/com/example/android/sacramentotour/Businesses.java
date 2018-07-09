@@ -23,21 +23,21 @@ public class Businesses extends Fragment   {
 
         ArrayList<SiteData> businessArray = new ArrayList<>();
 
-        businessArray.add(new SiteData("1518 Broadway Ave, Sacramento, CA 95818",
-                "916-441-0222","http://towercafe.com",
-                "Tower Cafe",R.drawable.towercafe ));
-        businessArray.add(new SiteData("4800 Riverside Boulevard, Sacramento, CA 95822",
-                "916-443-8400", "http://www.scottsseafood.net/",
-                "Scott's Seafood", R.drawable.scottsseafood));
-        businessArray.add(new SiteData("1525 L St, Sacramento, CA 95818",
-                "916-442-8899", "https://mixdowntown.net/",
-                "Mix Downtown", R.drawable.mix));
-        businessArray.add(new SiteData("1116 15th St, Sacramento, CA 95814",
-                "916-802-3036", "https://www.theparksac.com/",
-                "The Park Sacramento",R.drawable.thepark ));
-        businessArray.add(new SiteData("2801 Franklin Boulevard, Sacramento, CA 95818",
-                "916-457-6646","http://gunthersicecream.com/",
-                "Gunther’s Quality Ice Cream", R.drawable.gunthers));
+        businessArray.add(new SiteData(getString(R.string.b1address),
+                getString(R.string.b1phone),getString(R.string.b1web),
+                getString(R.string.b1name),R.drawable.towercafe ));
+        businessArray.add(new SiteData(getString(R.string.b2address),
+                getString(R.string.b2phone), getString(R.string.b2web),
+                getString(R.string.b2name), R.drawable.scottsseafood));
+        businessArray.add(new SiteData(getString(R.string.b3address),
+                getString(R.string.b3phone), getString(R.string.b3web),
+                getString(R.string.b3name), R.drawable.mix));
+        businessArray.add(new SiteData(getString(R.string.b4address),
+                getString(R.string.b4phone), getString(R.string.b4web),
+                getString(R.string.b4name),R.drawable.thepark ));
+        businessArray.add(new SiteData(getString(R.string.b5address),
+                getString(R.string.b5phone),getString(R.string.b5web),
+                getString(R.string.b5name), R.drawable.gunthers));
 
         ImageView imageOfThePlace = rootView.findViewById(R.id.imageView_business);
         imageOfThePlace.setImageResource( R.drawable.sacramento);

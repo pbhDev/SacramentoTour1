@@ -21,25 +21,25 @@ public class LocalEvents extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_local_events, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_businesses, container, false);
 
-        ImageView imageOfThePlace = rootView.findViewById(R.id.imageview_localevent);
+        ImageView imageOfThePlace = rootView.findViewById(R.id.imageView_business);
         imageOfThePlace.setImageResource( R.drawable.goldenonecenter);
 
         localEventArray = new ArrayList<>();
-        localEventArray.add(new SiteData("1600 Exposition Blvd, Sacramento, CA 95815",
-                "916-263-3247", "http://www.castatefair.org/special-events/",
-                "California State Fair", R.drawable.statefair));
-        localEventArray.add(new SiteData("500 David J Stern Walk, Sacramento, CA 95814",
-                "888-915-4647", "https://www.golden1center.com/events",
-                "Golden 1 Center", R.drawable.sacarena));
-        localEventArray.add(new SiteData("1600 Exposition Blvd, Sacramento, CA 95815",
-                "(916) 307-6100", "https://www.sacrepublicfc.com/",
-                "Sacramento Republic FC", R.drawable.sacrep ));
-        localEventArray.add(new SiteData("1206 Front Street, Sacramento CA 95814",
-                "916-446-1185","https://www.hornblower.com/home/sac",
-                "Hornblower", R.drawable.hornblower));
-        RecyclerView localEventListView = rootView.findViewById(R.id.recyvlerView_LocalEvent);
+        localEventArray.add(new SiteData(getString(R.string.l1address),
+                getString(R.string.l1phone), getString(R.string.l1web),
+                getString(R.string.l1name), R.drawable.statefair));
+        localEventArray.add(new SiteData(getString(R.string.l2address),
+                getString(R.string.l2phone), getString(R.string.l2web),
+                getString(R.string.l2name), R.drawable.sacarena));
+        localEventArray.add(new SiteData(getString(R.string.l3address),
+                getString(R.string.l3phone), getString(R.string.l3web),
+                getString(R.string.l3name), R.drawable.sacrep ));
+        localEventArray.add(new SiteData(getString(R.string.l4address),
+                getString(R.string.l4phone),getString(R.string.l4web),
+                getString(R.string.l4name), R.drawable.hornblower));
+        RecyclerView localEventListView = rootView.findViewById(R.id.recyclerView_businesses);
         localEventListView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         RecyclerViewAdapter rAdapter = new RecyclerViewAdapter(localEventArray,this.getContext());
         localEventListView.setAdapter(rAdapter);
